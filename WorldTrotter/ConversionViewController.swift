@@ -12,4 +12,18 @@ class ConversionViewController: UIViewController {
         super.viewDidLoad()
         print("\(type(of: self)) loaded its view.")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        let colors = [UIColor.systemRed,
+                      UIColor.systemBlue,
+                      UIColor.systemCyan,
+                      UIColor.systemPink,
+                      UIColor.systemPurple,
+                      UIColor.systemMint,
+                      UIColor.systemIndigo,
+        ]
+        let idx = Int.random(in: 0...colors.count)
+        let color = colors[idx]
+        view.backgroundColor = color
+    }
 }
