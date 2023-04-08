@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "list_icon_title_hotnews@2x.png",
+      "filename" : "data_icon_switch@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "list_icon_title_hotnews@3x.png",
+      "filename" : "data_icon_switch@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
