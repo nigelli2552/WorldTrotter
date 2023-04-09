@@ -22,7 +22,7 @@ class ConversionViewController: UIViewController {
                       UIColor.systemMint,
                       UIColor.systemIndigo,
         ]
-        let idx = Int.random(in: 0...colors.count)
+        let idx = Int.random(in: 0 ... colors.count - 1)
         let color = colors[idx]
         view.backgroundColor = color
     }
