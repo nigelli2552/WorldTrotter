@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
         segmentedControl.backgroundColor = UIColor.systemBackground
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
         view.addSubview(segmentedControl)
 
         let margins = view.layoutMarginsGuide
@@ -33,8 +34,6 @@ class MapViewController: UIViewController {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
-
-        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
 
         let tipsLabel = UILabel()
         tipsLabel.textColor = UIColor.systemBlue
@@ -51,6 +50,7 @@ class MapViewController: UIViewController {
 
         let switcher = UISwitch()
         switcher.translatesAutoresizingMaskIntoConstraints = false
+        switcher.addTarget(self, action: #selector(updatePointOfInterests(_:)), for: .valueChanged)
         view.addSubview(switcher)
 
         let topConstraintOfSwitcher = switcher.centerYAnchor.constraint(equalTo: tipsLabel.centerYAnchor)
@@ -70,5 +70,18 @@ class MapViewController: UIViewController {
         default:
             break
         }
+    }
+
+    @objc func updatePointOfInterests(_ switcher: UISwitch) {
+        if !switcher.isOn {
+            mapView.preferredConfiguration = MKStandardMapConfiguration(elevationStyle: .flat)
+            return
+        }
+        
+        let includingArr: [MKPointOfInterestCategory] = [.airport, .amusementPark, .aquarium]
+        let pointOfInterestFilter = MKPointOfInterestFilter(including: includingArr)
+        let hybridMapConfiguration = MKHybridMapConfiguration(elevationStyle: .flat)
+        hybridMapConfiguration.pointOfInterestFilter = pointOfInterestFilter
+        mapView.preferredConfiguration = hybridMapConfiguration
     }
 }
