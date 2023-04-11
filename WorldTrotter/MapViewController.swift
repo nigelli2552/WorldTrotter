@@ -35,6 +35,28 @@ class MapViewController: UIViewController {
         trailingConstraint.isActive = true
 
         segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
+
+        let tipsLabel = UILabel()
+        tipsLabel.textColor = UIColor.systemBlue
+        tipsLabel.text = "Points of Interest"
+        tipsLabel.sizeToFit()
+        tipsLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tipsLabel)
+
+        let topConstraintOfTipsLabel = tipsLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 16.0)
+        let leadingConstraintOfTipsLabel = tipsLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+
+        topConstraintOfTipsLabel.isActive = true
+        leadingConstraintOfTipsLabel.isActive = true
+
+        let switcher = UISwitch()
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(switcher)
+
+        let topConstraintOfSwitcher = switcher.centerYAnchor.constraint(equalTo: tipsLabel.centerYAnchor)
+        let leadingConstraintOfSwitcher = switcher.leadingAnchor.constraint(equalTo: tipsLabel.trailingAnchor, constant: 10)
+        topConstraintOfSwitcher.isActive = true
+        leadingConstraintOfSwitcher.isActive = true
     }
 
     @objc func mapTypeChanged(_ segmentedControl: UISegmentedControl) {
