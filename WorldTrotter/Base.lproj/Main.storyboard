@@ -42,13 +42,17 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPi-xr-HCy">
                                 <rect key="frame" x="137" y="75" width="156" height="85.333333333333314"/>
-                                <color key="textColor" red="1" green="0.33332824709999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="2tP-1T-F7k"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ue9-Q9-ZLZ" firstAttribute="top" secondItem="Prr-8L-6Fo" secondAttribute="bottom" constant="8" id="2Ts-mB-M4K"/>
                             <constraint firstItem="Z4k-Mc-3e8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2bF-xJ-U51"/>
@@ -61,10 +65,22 @@
                             <constraint firstItem="Prr-8L-6Fo" firstAttribute="top" secondItem="Z4k-Mc-3e8" secondAttribute="bottom" constant="8" id="ngl-e8-wsa"/>
                             <constraint firstItem="WPi-xr-HCy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="pYm-tO-qO9"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="72N-3E-ns1" appends="YES" id="HKc-4s-WcC"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="K9c-3A-IcD"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="Prr-8L-6Fo" id="k42-Zl-vg2"/>
+                        <outlet property="textField" destination="WPi-xr-HCy" id="AWZ-Cm-tgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="72N-3E-ns1">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="nwZ-RQ-Gz0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1017.2093023255813" y="3.218884120171674"/>
         </scene>
