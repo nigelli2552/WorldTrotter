@@ -80,8 +80,10 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //        print("Current text:\(String(describing: textField.text))")
 //        print("Replacement text:\(string)")
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        let current = Locale.current
+        let decimalSeparator = current.decimalSeparator ?? "."
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
         let replacementTextHasLetter = string.rangeOfCharacter(from: .letters)
         if existingTextHasDecimalSeparator != nil, replacementTextHasDecimalSeparator != nil {
             return false
