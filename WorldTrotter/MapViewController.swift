@@ -8,15 +8,20 @@
 import MapKit
 import UIKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var mapView: MKMapView!
+    let locationManager = CLLocationManager()
+    var locateRegionWhenFirstComeIn: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\(type(of: self)) loaded its view.")
+        checkLocationAuthorizationStatus()
     }
 
     override func loadView() {
         mapView = MKMapView()
+        mapView.showsUserLocation = true
         view = mapView
 
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybird", "Satellite"])
@@ -57,6 +62,8 @@ class MapViewController: UIViewController {
         let leadingConstraintOfSwitcher = switcher.leadingAnchor.constraint(equalTo: tipsLabel.trailingAnchor, constant: 10)
         topConstraintOfSwitcher.isActive = true
         leadingConstraintOfSwitcher.isActive = true
+
+        locationManager.delegate = self
     }
 
     @objc func mapTypeChanged(_ segmentedControl: UISegmentedControl) {
@@ -77,11 +84,38 @@ class MapViewController: UIViewController {
             mapView.preferredConfiguration = MKStandardMapConfiguration(elevationStyle: .flat)
             return
         }
-        
+
         let includingArr: [MKPointOfInterestCategory] = [.airport, .amusementPark, .aquarium]
         let pointOfInterestFilter = MKPointOfInterestFilter(including: includingArr)
         let hybridMapConfiguration = MKHybridMapConfiguration(elevationStyle: .flat)
         hybridMapConfiguration.pointOfInterestFilter = pointOfInterestFilter
         mapView.preferredConfiguration = hybridMapConfiguration
+    }
+
+    func checkLocationAuthorizationStatus() {
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        if locationManager.authorizationStatus == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+    }
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locateRegionWhenFirstComeIn {
+            let location = locations.first!
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let coordinateRegion = MKCoordinateRegion(center: center,
+                                                      span:
+                                                      MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+            mapView.setRegion(coordinateRegion, animated: true)
+            locateRegionWhenFirstComeIn = false
+        }
     }
 }
