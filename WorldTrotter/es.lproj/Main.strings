@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; configuration.title = "Show Answer"; ObjectID = "F8u-US-vhQ"; */
+"F8u-US-vhQ.configuration.title" = "Show Answer";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "F8u-US-vhQ"; */
+"F8u-US-vhQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Next Question"; ObjectID = "ILO-jq-mP7"; */
+"ILO-jq-mP7.configuration.title" = "Next Question";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ILO-jq-mP7"; */
+"ILO-jq-mP7.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "K9c-3A-IcD"; */
+"K9c-3A-IcD.title" = "Convertir";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "Prr-8L-6Fo"; */
+"Prr-8L-6Fo.text" = "100";
+
+/* Class = "UILabel"; text = "degree Celsius"; ObjectID = "Ue9-Q9-ZLZ"; */
+"Ue9-Q9-ZLZ.text" = "grados Celsius";
+
+/* Class = "UITextField"; placeholder = "value"; ObjectID = "WPi-xr-HCy"; */
+"WPi-xr-HCy.placeholder" = "valor";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "XJs-uT-RvT"; */
+"XJs-uT-RvT.text" = "???";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "Z4k-Mc-3e8"; */
+"Z4k-Mc-3e8.text" = "es realmente";
+
+/* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "fYM-1x-Cfl"; */
+"fYM-1x-Cfl.text" = "grados Fahrenheit";
+
+/* Class = "UILabel"; text = "What is the secret to iOS mastery?"; ObjectID = "ncy-RB-5Td"; */
+"ncy-RB-5Td.text" = "What is the secret to iOS mastery?";
+
+/* Class = "UITabBarItem"; title = "Quiz"; ObjectID = "oVV-9C-PgO"; */
+"oVV-9C-PgO.title" = "Quiz";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "uqu-gI-YAM"; */
+"uqu-gI-YAM.title" = "Mapa";
