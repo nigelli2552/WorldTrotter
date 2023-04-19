@@ -23,8 +23,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView = MKMapView()
         mapView.showsUserLocation = true
         view = mapView
+        
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
+        let satelliteString
+            = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let segmentedControl
+            = UISegmentedControl(items: [standardString, hybridString, satelliteString])
 
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybird", "Satellite"])
         segmentedControl.backgroundColor = UIColor.systemBackground
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false

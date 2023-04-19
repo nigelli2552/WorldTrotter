@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		268F260629E0792300F318F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268F260529E0792300F318F6 /* MapViewController.swift */; };
+		269AA09B29EF876800825192 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 269AA09D29EF876800825192 /* Localizable.strings */; };
 		26A9A94A29E11EF00050AFF5 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9A94929E11EF00050AFF5 /* QuizViewController.swift */; };
 		26F2721029DDC9E9003B573D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F2720F29DDC9E9003B573D /* AppDelegate.swift */; };
 		26F2721229DDC9E9003B573D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F2721129DDC9E9003B573D /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		2610495329EE2AD700374972 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		2610495429EE2AD800374972 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		268F260529E0792300F318F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		269AA09C29EF876800825192 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26A9A94929E11EF00050AFF5 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		26F2720C29DDC9E9003B573D /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F2720F29DDC9E9003B573D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		26F2720E29DDC9E9003B573D /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
+				269AA09D29EF876800825192 /* Localizable.strings */,
 				26F2720F29DDC9E9003B573D /* AppDelegate.swift */,
 				26F2721129DDC9E9003B573D /* SceneDelegate.swift */,
 				26F2721329DDC9E9003B573D /* ConversionViewController.swift */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F2721C29DDC9EA003B573D /* LaunchScreen.storyboard in Resources */,
+				269AA09B29EF876800825192 /* Localizable.strings in Resources */,
 				26F2721929DDC9EA003B573D /* Assets.xcassets in Resources */,
 				26F2721729DDC9E9003B573D /* Main.storyboard in Resources */,
 			);
@@ -309,6 +313,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		269AA09D29EF876800825192 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				269AA09C29EF876800825192 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		26F2721529DDC9E9003B573D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
