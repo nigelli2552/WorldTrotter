@@ -36,6 +36,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         print("\(type(of: self)) loaded its view.")
         updateCelsiusLabel()
+        badMethod()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -92,5 +93,15 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         return true
+    }
+
+    func badMethod() {
+        let array = NSMutableArray()
+        for i in 0 ..< 10 {
+            array.insert(i, at: i)
+        }
+        for _ in 0 ... 10 {
+            array.removeObject(at: 0)
+        }
     }
 }
