@@ -100,7 +100,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         for i in 0 ..< 10 {
             array.insert(i, at: i)
         }
-        for _ in 0 ... 10 {
+        for _ in 0 ..< 10 {
             array.removeObject(at: 0)
         }
     }
